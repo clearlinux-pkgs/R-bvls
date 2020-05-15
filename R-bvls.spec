@@ -4,17 +4,14 @@
 #
 Name     : R-bvls
 Version  : 1.4
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/bvls_1.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bvls_1.4.tar.gz
 Summary  : The Stark-Parker algorithm for bounded-variable least squares
 Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-bvls-lib = %{version}-%{release}
-BuildRequires : R-nnls
-BuildRequires : R-quadprog
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 algorithm for bounded-variable least squares
@@ -29,21 +26,22 @@ lib components for the R-bvls package.
 
 %prep
 %setup -q -c -n bvls
+cd %{_builddir}/bvls
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571806342
+export SOURCE_DATE_EPOCH=1589576340
 
 %install
-export SOURCE_DATE_EPOCH=1571806342
+export SOURCE_DATE_EPOCH=1589576340
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
