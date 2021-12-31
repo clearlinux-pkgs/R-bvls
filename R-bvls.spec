@@ -4,7 +4,7 @@
 #
 Name     : R-bvls
 Version  : 1.4
-Release  : 29
+Release  : 30
 URL      : https://cran.r-project.org/src/contrib/bvls_1.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bvls_1.4.tar.gz
 Summary  : The Stark-Parker algorithm for bounded-variable least squares
@@ -33,10 +33,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1640904221
+export SOURCE_DATE_EPOCH=1640985612
 
 %install
-export SOURCE_DATE_EPOCH=1640904221
+export SOURCE_DATE_EPOCH=1640985612
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
